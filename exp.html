@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+
+<div id="1">
+  <h3>username</h3>
+  <p>itro</p>
+
+</div>
+
+<script>
+var url = "data.json"
+var olurl = "https://infinity-api.infinitynewtab.com/get-icons?lang=zh-CN&page=0&source=shareByUser"
+var request = new XMLHttpRequest();
+request.open("get", olurl);
+request.send(null)
+request.onload = function(){
+  var data  = JSON.parse(request.responseText)
+  console.log(data)
+  for (let i in data.icons) {
+    document.write(`<h4>`+data.icons[i].url +`</h4>`)
+    document.write(`图片地址为：<h6>` + data.icons[i].imgname + `</h6>`)
+    document.write(`<img src= `+data.icons[i].src+`>`)
+  }
+}
+
+</script>
+</html>

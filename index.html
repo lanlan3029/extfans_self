@@ -44,8 +44,41 @@
         <div id="recommend-ext">
             <h2>编辑推荐Chrome插件</h2>
 
+<<<<<<< HEAD
 
             <ul class="recommend-detial" ,id="udata"></ul>
+=======
+            <ul class="recommend-detial" id="content">
+                <script>
+                    var str = ""
+                    for ( var i=0;i<10;i++) {
+                        str += `
+                        <li class="recommend-item">
+
+                    <div class="recommend-itemname">
+                        <span class="recommend-logo"><img src="photp/ia_100000019.png"></span>
+                        <div class="recommend-itemright">
+                            <p>Infinity新标签页(pro)</p>
+                            <ul class="recommend-itemgrade">
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="recommend-itemintro">
+                        <p>Infinity新标签页Pro让你可以自定义的新标签页</p>
+                    </div>
+                </li>
+                        `   
+                    }
+                  document.getElementById("content").innerHTML = str
+                </script>
+                <li class="recommend-item">
+>>>>>>> 1c64c49aef8059c7a6e66c9ce8044a6b86cd9929
 
             <script>
                 var recomm = new XMLHttpRequest();
