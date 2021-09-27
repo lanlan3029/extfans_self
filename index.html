@@ -44,41 +44,41 @@
         <div id="recommend-ext">
             <h2>编辑推荐Chrome插件</h2>
 
-            <ul class="recommend-detial">
 
-                <li class="recommend-item">
+            <ul class="recommend-detial" ,id="udata"></ul>
 
-                    <div class="recommend-itemname">
-                        <span class="recommend-logo"><img src="photp/ia_100000019.png"></span>
-                        <div class="recommend-itemright">
-                            <p>Infinity新标签页(pro)</p>
-                            <ul class="recommend-itemgrade">
+            <script>
+                var recomm = new XMLHttpRequest();
+                var url = "https://infinity-api.infinitynewtab.com/get-icons?lang=zh-CN&page=1";
+                recomm.open('get', url);
+                recomm.send(null);
+                recomm.onload = function() {
+
+                    var data = JSON.parse(recomm.responseText)
+
+
+                    for (var i = 0; i < 9; i++) {
+                        var recommend = document.getElementById("udata");
+                        recommend.innerHTML += (`<li class="recommend-item"><div class="recommend-itemname">
+                        <span class="recommend-logo"><img src=` + data.icons[i].src + `></span>
+                        <div class="recommend-itemright"><p>` + data.icons[i].name + `</p><ul class="recommend-itemgrade">
                                 <span class="grade"><img src="photp/xing.png"></span>
                                 <span class="grade"><img src="photp/xing.png"></span>
                                 <span class="grade"><img src="photp/xing.png"></span>
                                 <span class="grade"><img src="photp/xing.png"></span>
                                 <span class="grade"><img src="photp/xing.png"></span>
-                            </ul>
-                        </div>
+                            </ul></div></div>
+        <div class="recommend-itemintro">
+            <p>` + data.icons[i].description + `</p>
+        </div>
+        </li>`)
 
-                    </div>
-                    <div class="recommend-itemintro">
-                        <p>Infinity新标签页Pro让你可以自定义的新标签页</p>
-                    </div>
-                </li>
 
-                <li class="recommend-item"></li>
 
-                <li class="recommend-item"></li>
-                <li class="recommend-item"></li>
+                    }
 
-                <li class="recommend-item"></li>
-                <li class="recommend-item"></li>
-
-                <li class="recommend-item"></li>
-                <li class="recommend-item"></li>
-                <li class="recommend-item"></li>
-            </ul>
+                }
+            </script>
 
         </div>
         <!-- 热门插件 -->

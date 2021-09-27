@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" type="text/css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var recomm = new XMLHttpRequest();
+        var url = "https://infinity-api.infinitynewtab.com/get-icons?lang=zh-CN&page=1";
+        recomm.open('get', url);
+        recomm.send(null);
+        recomm.onload = function() {
+
+            var data = JSON.parse(recomm.responseText)
+
+
+            for (var i = 0; i < 12; i++) {
+                var recommend = document.getElementById("udata");
+                recommend.innerHTML += (`<li class="recommend-item"><div class="recommend-itemname">
+                        <span class="recommend-logo"><img src=` + data.icons[i].src + `></span>
+                        <div class="recommend-itemright"><p>` + data.icons[i].name + `</p><ul class="recommend-itemgrade">
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                                <span class="grade"><img src="photp/xing.png"></span>
+                            </ul></div></div>
+        <div class="recommend-itemintro">
+            <p>` + data.icons[i].description + `</p>
+        </div>
+        </li>`)
+            }
+        }
+    </script>
+    <div id="udata"></div>
+
+</body>
+
+</html>
