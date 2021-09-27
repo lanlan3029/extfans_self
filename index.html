@@ -44,14 +44,12 @@
         <div id="recommend-ext">
             <h2>编辑推荐Chrome插件</h2>
 
-<<<<<<< HEAD
 
             <ul class="recommend-detial" ,id="udata"></ul>
-=======
             <ul class="recommend-detial" id="content">
                 <script>
                     var str = ""
-                    for ( var i=0;i<10;i++) {
+                    for (var i = 0; i < 10; i++) {
                         str += `
                         <li class="recommend-item">
 
@@ -73,26 +71,25 @@
                         <p>Infinity新标签页Pro让你可以自定义的新标签页</p>
                     </div>
                 </li>
-                        `   
+                        `
                     }
-                  document.getElementById("content").innerHTML = str
+                    document.getElementById("content").innerHTML = str
                 </script>
                 <li class="recommend-item">
->>>>>>> 1c64c49aef8059c7a6e66c9ce8044a6b86cd9929
 
-            <script>
-                var recomm = new XMLHttpRequest();
-                var url = "https://infinity-api.infinitynewtab.com/get-icons?lang=zh-CN&page=1";
-                recomm.open('get', url);
-                recomm.send(null);
-                recomm.onload = function() {
+                    <script>
+                        var recomm = new XMLHttpRequest();
+                        var url = "https://infinity-api.infinitynewtab.com/get-icons?lang=zh-CN&page=1";
+                        recomm.open('get', url);
+                        recomm.send(null);
+                        recomm.onload = function() {
 
-                    var data = JSON.parse(recomm.responseText)
+                            var data = JSON.parse(recomm.responseText)
 
 
-                    for (var i = 0; i < 9; i++) {
-                        var recommend = document.getElementById("udata");
-                        recommend.innerHTML += (`<li class="recommend-item"><div class="recommend-itemname">
+                            for (var i = 0; i < 9; i++) {
+                                var recommend = document.getElementById("udata");
+                                recommend.innerHTML += (`<li class="recommend-item"><div class="recommend-itemname">
                         <span class="recommend-logo"><img src=` + data.icons[i].src + `></span>
                         <div class="recommend-itemright"><p>` + data.icons[i].name + `</p><ul class="recommend-itemgrade">
                                 <span class="grade"><img src="photp/xing.png"></span>
@@ -108,10 +105,10 @@
 
 
 
-                    }
+                            }
 
-                }
-            </script>
+                        }
+                    </script>
 
         </div>
         <!-- 热门插件 -->
