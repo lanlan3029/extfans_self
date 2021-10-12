@@ -39,7 +39,7 @@ body {
     float: left;
 }
 
-#head .nav .nav-text {
+#head .nav .nav-text a {
     text-decoration: none;
     color: rgba(33, 33, 33, 1);
     width: 56px;
@@ -48,8 +48,18 @@ body {
     font-weight: 500;
 }
 
-#head .nav .nav-text2,
-.nav-text4 {
+#head .nav .nav-text2 a {
+    text-decoration: none;
+    color: rgba(33, 33, 33, 1);
+    width: 76px;
+    padding: 0 21px;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    top: -4px;
+}
+
+.nav-text4 a {
     text-decoration: none;
     color: rgba(33, 33, 33, 1);
     width: 76px;
@@ -108,6 +118,41 @@ body {
     display: block;
     font-size: 10px;
     margin-top: 8px;
+}
+
+
+/* 子菜单 */
+
+#head .nav .nav-text2 {
+    cursor: pointer;
+}
+
+#head .nav .nav-text2 .submenu2 {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 119px;
+    text-align: left;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+#head .nav .nav-text2 .submenu2 a {
+    padding: 8px 0px 8px 24px;
+    display: inline-block;
+    width: 95px;
+}
+
+#head .nav .nav-text2 .submenu2 a:hover {
+    background-color: rgba(92, 92, 92, 0.2);
+}
+
+#head .nav .nav-text2:hover .submenu2 {
+    display: block;
+    z-index: 10;
+}
+
+#head .nav .nav-text2 a:hover {
+    color: red;
 }
 
 
@@ -232,6 +277,13 @@ body {
     height: 40px;
 }
 
+.recommend-item .recommend-itemintro p {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .recommend-item .grade img {
     width: 12px;
 }
@@ -259,8 +311,7 @@ body {
     width: 260px;
     height: 148px;
     background-color: #fff;
-    border-radius: 4px;
-    display: flex;
+    border-radius: 10px;
 }
 
 .hot-item .hot-itemname .hot-itemright p {
@@ -320,9 +371,10 @@ body {
 }
 
 .message-detial {
+    margin: 0;
+    padding: 0;
     position: relative;
-    left: -39px;
-    width: 100%;
+    width: 820px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -330,19 +382,44 @@ body {
 
 #message .message-detial li {
     list-style: none;
-    margin-bottom: 20px;
-    width: 400px;
-    height: 150px;
+    width: 360px;
+    height: 110px;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 10px;
     display: flex;
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 #message .message-detial .message-item .message-logo img {
-    width: 54px;
+    width: 140px;
+    height: 110px;
 }
 
-#message .message-detial .message-item .grade img {
+#message .message-detial .message-item .mes-content {
+    margin-left: 16px;
+    width: 208px;
+    height: 110px;
+}
+
+#message .message-detial .message-item .mes-content .mes-th {
+    width: 208px;
+    height: 20px;
+    margin-top: 40px;
+    font-size: 12px;
+    color: #999999
+}
+
+#message .message-detial .message-item .mes-content .mes-th .eye-logo img {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+}
+
+#message .message-detial .message-item .mes-content .mes-th .time-logo img {
+    margin-left: 72px;
+    width: 12px;
     width: 12px;
 }
 

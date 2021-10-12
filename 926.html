@@ -20,10 +20,18 @@
         var ul = document.getElementsByTagName("ul")[0]
         var lis = ul.getElementsByTagName("li")
         lis[0].onclick = function() {
-            this.innerText = "<h2>谢谢</h2>";
+            this.innerText = "谢谢";
         }
         lis[1].onclick = function() {
             this.innerHTML = "<h2>我是一名菜鸟</h2>";
+
+        }
+        lis[2].onclick = function() {
+            this.outerText = "我是学生";
+
+        }
+        lis[3].onclick = function() {
+            this.outerHTML = "<h2>当然喜欢</h2>";
 
         }
     </script>

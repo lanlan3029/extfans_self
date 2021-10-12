@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #nav {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 96px;
+            background-color: rgb(200, 200, 200);
+            list-style: none;
+        }
+        
+        #nav li {
+            float: left;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #nav .menu2 {
+            margin: 0;
+            padding: 0;
+            width: 100px;
+            line-height: 96px;
+            height: 96px;
+            background-color: blanchedalmond;
+            cursor: hand;
+        }
+        
+        #nav .menu2 .list {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #nav li a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="nav">
+        <li class="menu2" onMouseOver="document.getElementsByClassName('list').style.backgroundcolor='#fff'" onmouseout="document.getElementsByClassName('list').style.display='none'"><a href="#">好烦呀</a>
+            <ul class="list">
+                <li><a href="#">子菜单</a></li>
+                <li><a href="#">子菜单</a></li>
+                <li><a href="#">子菜单</a></li>
+            </ul>
+        </li>
+        <li class="menu2"><a href="#">怎么不对</a>
+            <ul class="list">
+                <li><a href="#">子菜单</a></li>
+                <li><a href="#">子菜单</a></li>
+                <li><a href="#">子菜单</a></li>
+            </ul>
+        </li>
+        <li class="menu2"><a href="#">好烦呀</a>
+            <ul class="list">
+                <li><a href="#">子菜单</a></li>
+                <li><a href="#">子菜单</a></li>
+                <li><a href="#">子菜单</a></li>
+            </ul>
+        </li>
+
+    </ul>
+
+
+</body>
+
+</html>

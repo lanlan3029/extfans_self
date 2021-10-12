@@ -16,13 +16,29 @@
             <span class="presentation">Chrome插件扩展下载网</span>
         </div>
         <ul class="nav">
-            <li><a class="nav-text" href="#">首页</a></li>
-            <li><a class="nav-text2" href="#">全部扩展<span class="dropDown"><img src="logo/drop-down.png" ></span></a></li>
-            <li><a class="nav-text" href="#">热门插件</a></li>
-            <li><a class="nav-text4" href="#">分类排行<span class="dropDown"><img src="logo/drop-down.png" ></span></a></li>
-            <li><a class="nav-text" href="#">文章资讯</a></li>
-            <li><a class="nav-text" href="#">油猴脚本</a></li>
-            <li><a class="nav-text" href="#">安装教程</a></li>
+            <li class="nav-text"><a href="#">首页</a></li>
+            <li class="nav-text2"><a href="#">全部扩展<span class="dropDown"><img src="logo/drop-down.png" ></span></a>
+                <div class="submenu2">
+                    <a href="#">社交通讯</a>
+                    <a href="#">游戏娱乐</a>
+                    <a href="#">生产工具</a>
+                    <a href="#">无障碍</a>
+                    <a href="#">购物插件</a>
+                    <a href="#">照片插件</a>
+                    <a href="#">搜索工具</a>
+                    <a href="#">开发者工具</a>
+                    <a href="#">新闻天气</a>
+                    <a href="#">体育插件</a>
+                    <a href="#">博客插件</a>
+                    <a href="#">谷歌app插件</a>
+                </div>
+
+            </li>
+            <li class="nav-text"><a href="#">热门插件</a></li>
+            <li class="nav-text4"><a href="#">分类排行<span class="dropDown"><img src="logo/drop-down.png" ></span></a></li>
+            <li class="nav-text"><a href="#">文章资讯</a></li>
+            <li class="nav-text"><a href="#">油猴脚本</a></li>
+            <li class="nav-text"><a href="#">安装教程</a></li>
         </ul>
         <div class="searchhover"><img src="logo/searchhover.png"><input type="text" placeholder="搜索扩展或文章"></div>
         <div class="avatar"><img src="logo/avatar.png"></div>
@@ -40,121 +56,20 @@
     </div>
 
     <div id="content-left">
+
         <!-- 编辑推荐 -->
         <div id="recommend-ext">
             <h2>编辑推荐Chrome插件</h2>
 
 
-            <ul class="recommend-detial" ,id="udata"></ul>
-            <ul class="recommend-detial" id="content">
-                <script>
-                    var str = ""
-                    for (var i = 0; i < 10; i++) {
-                        str += `
-                        <li class="recommend-item">
+            <ul class="recommend-detial" id="udata"></ul>
 
-                    <div class="recommend-itemname">
-                        <span class="recommend-logo"><img src="photp/ia_100000019.png"></span>
-                        <div class="recommend-itemright">
-                            <p>Infinity新标签页(pro)</p>
-                            <ul class="recommend-itemgrade">
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="recommend-itemintro">
-                        <p>Infinity新标签页Pro让你可以自定义的新标签页</p>
-                    </div>
-                </li>
-                        `
-                    }
-                    document.getElementById("content").innerHTML = str
-                </script>
-                <li class="recommend-item">
-
-                    <script>
-                        var recomm = new XMLHttpRequest();
-                        var url = "https://infinity-api.infinitynewtab.com/get-icons?lang=zh-CN&page=1";
-                        recomm.open('get', url);
-                        recomm.send(null);
-                        recomm.onload = function() {
-
-                            var data = JSON.parse(recomm.responseText)
-
-
-                            for (var i = 0; i < 9; i++) {
-                                var recommend = document.getElementById("udata");
-                                recommend.innerHTML += (`<li class="recommend-item"><div class="recommend-itemname">
-                        <span class="recommend-logo"><img src=` + data.icons[i].src + `></span>
-                        <div class="recommend-itemright"><p>` + data.icons[i].name + `</p><ul class="recommend-itemgrade">
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                            </ul></div></div>
-        <div class="recommend-itemintro">
-            <p>` + data.icons[i].description + `</p>
-        </div>
-        </li>`)
-
-
-
-                            }
-
-                        }
-                    </script>
 
         </div>
         <!-- 热门插件 -->
         <div id="hot-ext">
             <h2>热门Chrome插件</h2>
-            <ul class="hot-detial">
-                <li class="hot-item">
-                    <div class="hot-itemname">
-                        <span class="hot-logo"><img src="photp/ia_100000019.png"></span>
-                        <div class="hot-itemright">
-                            <p>Infinity新标签页(pro)</p>
-                            <ul class="hot-itemgrade">
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                                <span class="grade"><img src="photp/xing.png"></span>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <div class="hot-itemintro">
-                        <p>Infinity新标签页Pro让你可以自定义的新标签页</p>
-                    </div>
-
-                </li>
-                <li class="hot-item"></li>
-
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-                <li class="hot-item"></li>
-            </ul>
+            <ul class="hot-detial" id="hot-data"></ul>
             <p class="hot-more"><a href="#">查看更多</a></p>
 
 
@@ -162,18 +77,18 @@
         <!-- 文章资讯 -->
         <div id="message">
             <h2>文章资讯</h2>
-            <ul class="message-detial">
+            <ul class="message-detial" id="article">
                 <li class="message-item">
                     <span class="message-logo"><img src="photp/ia_100000019.png"></span>
-                    <article>
+                    <div class="mes-content">
                         <h3>Infinity新标签页(pro)</h3>
-                        <span class="grade"><img src="photp/xing.png"></span>
-                        <span class="grade"><img src="photp/xing.png"></span>
-                        <span class="grade"><img src="photp/xing.png"></span>
-                        <span class="grade"><img src="photp/xing.png"></span>
-                        <span class="grade"><img src="photp/xing.png"></span>
-                        <p>Infinity新标签页Pro让你可以自定义的新标签页</p>
-                    </article>
+                        <div class="mes-th">
+                            <span class="eye-logo"><img src="logo/icon-watch@2x.png">1180</span>
+                            <span class="time-logo"><img src="logo/icon-time@2x.png">2012-2-23</span>
+
+                        </div>
+
+                    </div>
 
                 </li>
                 <li class="message-item"></li>
@@ -248,6 +163,95 @@
         </ul>
 
     </div>
+
+
+
+    <script>
+        /* 编辑推荐 */
+
+        var recomm = new XMLHttpRequest();
+        var url = "https://infinity-api.infinitynewtab.com/get-icons?lang=zh-CN&page=1";
+        recomm.open('get', url);
+        recomm.send(null);
+        recomm.onreadystatechange = function() {
+
+            if (recomm.readyState == 4 && recomm.status == 200) {
+                var data = JSON.parse(recomm.responseText)
+                console.log(data)
+                for (var i = 0; i < 9; i++) {
+                    var recommend = document.getElementById("udata");
+
+                    recommend.innerHTML += (`<li class="recommend-item"><div class="recommend-itemname">
+            <span class="recommend-logo"><img src=` + data.icons[i].src + `></span>
+            <div class="recommend-itemright"><p>` + data.icons[i].name + `</p><ul class="recommend-itemgrade">
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                </ul></div></div>
+<div class="recommend-itemintro">
+<p>` + data.icons[i].description + `</p>
+</div>
+</li>`)
+                }
+
+
+            }
+
+
+        }
+
+
+
+        /* 热门插件 */
+        var hot = new XMLHttpRequest();
+        hot.open('get', url);
+        hot.send(null);
+        hot.onreadystatechange = function() {
+            hotdata = JSON.parse(hot.responseText)
+            var compare = function(prop) {
+                return function(obj1, obj2) {
+                    var val1 = obj1[prop];
+                    var val2 = obj2[prop];
+                    if (val1 < val2) {
+                        return 1;
+                    } else if (val1 > val2) {
+                        return -1;
+                    } else {
+                        return 0;
+                    }
+                }
+            }
+
+            var hotdataarr = hotdata.icons
+            var afterdata = hotdataarr.sort(compare("rate"))
+            console.log(afterdata)
+
+            if (hot.readyState == 4 && hot.status == 200) {
+                for (var i = 0; i < 15; i++) {
+                    var hotarr = document.getElementById("hot-data");
+
+                    hotarr.innerHTML += (`<li class="recommend-item"><div class="recommend-itemname">
+            <span class="recommend-logo"><img src=` + afterdata[i].src + `></span>
+            <div class="recommend-itemright"><p>` + afterdata[i].name + `</p><ul class="recommend-itemgrade">
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                    <span class="grade"><img src="photp/xing.png"></span>
+                </ul></div></div>
+<div class="recommend-itemintro">
+<p>` + afterdata[i].description + `</p>
+</div>
+</li>`)
+                }
+            }
+        }
+
+
+        /* 文章资讯 */
+    </script>
 
 
 </body>
